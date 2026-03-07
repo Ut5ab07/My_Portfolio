@@ -1,9 +1,59 @@
 "use client";
+import { useState, useEffect } from "react";
 import SectionWrapper from "./ui/SectionWrapper";
 import GlassCard from "./ui/GlassCard";
-import { GitCommit, GitPullRequest, GitMerge, BookOpen } from "lucide-react";
+import { BookOpen, Users, Star, FileCode2 } from "lucide-react";
 
 export default function GithubActivity() {
+  const [stats, setStats] = useState({
+    repos: "...",
+    followers: "...",
+    contributions: "...",
+    gists: "...",
+  });
+
+  useEffect(() => {
+    async function fetchGithubStats() {
+      const username = "Ut5ab07";
+      let fetchedStats = {
+        repos: 14,
+        followers: 11,
+        contributions: 382,
+        gists: 0,
+      };
+
+      try {
+        const userRes = await fetch(`https://api.github.com/users/${username}`);
+        if (userRes.ok) {
+          const userData = await userRes.json();
+          fetchedStats.repos = userData.public_repos ?? fetchedStats.repos;
+          fetchedStats.followers = userData.followers ?? fetchedStats.followers;
+          fetchedStats.gists = userData.public_gists ?? fetchedStats.gists;
+        }
+      } catch (e) {
+        console.error("Failed to fetch GitHub user data", e);
+      }
+
+      try {
+         const contribRes = await fetch(`/api/github?username=${username}`);
+         if (contribRes.ok) {
+           const contribData = await contribRes.json();
+           fetchedStats.contributions = contribData.totalContributions ?? fetchedStats.contributions;
+         }
+      } catch (e) {
+        console.error("Failed to fetch GitHub contributions proxy", e);
+      }
+
+      setStats({
+        repos: fetchedStats.repos.toString(),
+        followers: fetchedStats.followers.toString(),
+        contributions: fetchedStats.contributions.toString(),
+        gists: fetchedStats.gists.toString(),
+      });
+    }
+    fetchGithubStats();
+  }, []);
+
   return (
     <SectionWrapper>
       <GlassCard className="h-full p-8 relative overflow-hidden group border-white/10 hover:border-cyan-500/30 transition-colors duration-500">
@@ -13,20 +63,48 @@ export default function GithubActivity() {
           <div className="flex items-center w-full mb-8 cursor-pointer">
             <div className="flex-grow h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
             <div className="flex items-center gap-3 px-6 text-white">
-              <GithubIcon />
-              <h3 className="text-2xl font-bold tracking-tight whitespace-nowrap">GitHub Activity</h3>
+              <a href="https://github.com/Ut5ab07" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 hover:text-cyan-400 transition-colors">
+                <GithubIcon />
+                <h3 className="text-2xl font-bold tracking-tight whitespace-nowrap">GitHub Activity</h3>
+              </a>
             </div>
             <div className="flex-grow h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
           </div>
 
           <div className="grid grid-cols-2 gap-4">
-            <StatBox icon={<GitCommit className="text-cyan-400" />} label="Commits" value="1,204+" />
-            <StatBox icon={<BookOpen className="text-purple-400" />} label="Repositories" value="34" />
-            <StatBox icon={<GitPullRequest className="text-emerald-400" />} label="Contributions" value="382" />
-            <StatBox icon={<GitMerge className="text-amber-400" />} label="Stars Earned" value="118" />
+            <StatBox icon={<BookOpen className="text-[#66E0FF]" />} label="Repositories" value={stats.repos} />
+            <StatBox icon={<Users className="text-purple-400" />} label="Followers" value={stats.followers} />
+            <StatBox icon={<Star className="text-emerald-400" />} label="Contributions" value={stats.contributions} />
+            
+            <div className="bg-slate-900/50 rounded-xl p-4 border border-white/5 flex flex-col items-start justify-between backdrop-blur-sm">
+              <div className="flex items-center gap-2 mb-2 w-full">
+                <div className="p-2 bg-white/5 rounded-lg border border-white/5">
+                  <FileCode2 className="text-amber-400 w-6 h-6" />
+                </div>
+                <div className="text-xs font-medium text-gray-400 uppercase tracking-wide">Top Languages</div>
+              </div>
+              <div className="flex flex-col gap-1 w-full mt-2">
+                <div className="flex items-center justify-between">
+                  <span className="text-sm font-semibold text-white">Python</span>
+                  <div className="w-16 h-1.5 bg-white/10 rounded-full overflow-hidden">
+                    <div className="h-full bg-blue-400 w-[75%] rounded-full"></div>
+                  </div>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-sm font-semibold text-white">SQL</span>
+                  <div className="w-16 h-1.5 bg-white/10 rounded-full overflow-hidden">
+                    <div className="h-full bg-purple-400 w-[15%] rounded-full"></div>
+                  </div>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-sm font-semibold text-white whitespace-nowrap overflow-hidden text-ellipsis mr-2">JavaScript</span>
+                  <div className="w-16 h-1.5 bg-white/10 rounded-full overflow-hidden shrink-0">
+                    <div className="h-full bg-yellow-400 w-[10%] rounded-full"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-
-
         </div>
       </GlassCard>
     </SectionWrapper>
