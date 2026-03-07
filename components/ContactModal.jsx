@@ -67,6 +67,17 @@ export default function ContactModal({ isOpen, onClose }) {
       return;
     }
 
+    // Rate Limiting
+    const lastSent = localStorage.getItem("lastEmailTime");
+
+    if (lastSent && Date.now() - lastSent < 60000) {
+      setErrorMsg("Please wait before sending another message.");
+      setStatus("error");
+      return;
+}
+
+localStorage.setItem("lastEmailTime", Date.now());
+
     setStatus("loading");
     setErrorMsg("");
 
