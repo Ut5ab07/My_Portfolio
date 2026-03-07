@@ -1,5 +1,5 @@
 "use client";
-import { Github, Linkedin, Twitter, Mail } from "lucide-react";
+import { Mountain, MapPin } from "lucide-react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -10,26 +10,22 @@ export default function Footer() {
         
         <div className="flex flex-col items-center sm:items-start gap-1">
           <span className="text-lg font-bold tracking-tight text-white gap-2 flex items-center">
-            Utsab<span className="text-cyan-400">.</span>
+            Utsab Raj Acharya<span className="text-cyan-400">.</span>
           </span>
           <p className="text-gray-400 text-sm">
-            &copy; {currentYear} Utsab. All rights reserved.
+            &copy; {currentYear} Utsab Raj Acharya. All rights reserved.
           </p>
         </div>
 
-        <div className="flex items-center space-x-6">
-          <a href="#" className="text-gray-400 hover:text-cyan-400 transition-colors" aria-label="GitHub">
-            <Github className="w-5 h-5" />
-          </a>
-          <a href="#" className="text-gray-400 hover:text-cyan-400 transition-colors" aria-label="LinkedIn">
-            <Linkedin className="w-5 h-5" />
-          </a>
-          <a href="#" className="text-gray-400 hover:text-cyan-400 transition-colors" aria-label="Twitter">
-            <Twitter className="w-5 h-5" />
-          </a>
-          <a href="#" className="text-gray-400 hover:text-cyan-400 transition-colors" aria-label="Email">
-            <Mail className="w-5 h-5" />
-          </a>
+        <div className="text-sm text-[#A8B2D1] text-center sm:text-right flex flex-col items-center sm:items-end gap-1.5 mt-6 sm:mt-0">
+          <p className="flex items-center gap-1.5">
+            <Mountain className="w-4 h-4 text-emerald-400" />
+            From Pokhara, Nepal
+          </p>
+          <p className="flex items-center gap-1.5">
+            <MapPin className="w-4 h-4 text-cyan-400" />
+            Currently in Bangalore, India
+          </p>
         </div>
       </div>
     </footer>

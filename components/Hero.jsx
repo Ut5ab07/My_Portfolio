@@ -27,21 +27,20 @@ export default function Hero() {
               machine learning, backend systems, and crafting engaging user experiences.
             </p>
 
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:gap-6">
-              <MagneticButton className="flex items-center gap-2 bg-gradient-to-r from-cyan-600 to-cyan-500 text-white hover:from-cyan-500 hover:to-cyan-400 shadow-[0_0_20px_rgba(91,192,190,0.3)]">
-                View Projects
-                <ArrowRight className="h-4 w-4" />
-              </MagneticButton>
+            <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
+              <a href="#projects" className="w-full sm:w-auto">
+                <MagneticButton className="flex w-full items-center justify-center gap-2 bg-gradient-to-r from-cyan-600 to-cyan-500 text-white hover:from-cyan-500 hover:to-cyan-400 shadow-[0_0_20px_rgba(91,192,190,0.3)]">
+                  View Projects
+                  <ArrowRight className="h-4 w-4" />
+                </MagneticButton>
+              </a>
 
-              <MagneticButton className="flex items-center gap-2 border border-white/10 bg-white/5 hover:bg-white/10">
-                <Github className="h-4 w-4" />
-                GitHub
-              </MagneticButton>
-
-              <MagneticButton className="flex items-center gap-2 border border-white/10 bg-white/5 hover:bg-white/10">
-                <FileText className="h-4 w-4" />
-                Resume
-              </MagneticButton>
+              <a href="https://github.com/Ut5ab07" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+                <MagneticButton className="flex w-full items-center justify-center gap-2 border border-white/10 bg-white/5 hover:bg-white/10">
+                  <Github className="h-4 w-4" />
+                  GitHub
+                </MagneticButton>
+              </a>
             </div>
           </GlassCard>
         </motion.div>
