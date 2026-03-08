@@ -36,25 +36,18 @@ export default function About() {
               </div>
 
               <p>
-                Hello! I&apos;m Utsab, a passionate AI Engineer and Data
+                Hello! I&apos;m Utsab, a passionate AI and Data
                 Science enthusiast with a deep curiosity for understanding complex
-                systems. My journey began with writing simple scripts, which
-                quickly evolved into architecting scalable machine learning pipelines
-                and web applications.
+                systems. I&apos;m particularly interested in machine learning, semantic search, and recommendation systems, and I enjoy exploring 
+                how algorithms and data can be used to solve real-world problems.
               </p>
 
               <p>
-                I thrive at the intersection of data and design. While my core
-                expertise lies in developing intelligent algorithms and analyzing
-                large datasets, I equally value creating clean, intuitive user
-                interfaces that make technology accessible and enjoyable.
+              I also enjoy creating clean, intuitive applications that make complex technologies easier to use.
+              When I&apos;m not working on projects, I&apos;m usually experimenting with new AI ideas,
+              learning about emerging technologies in machine learning or watching movies and sports.
               </p>
 
-              <p>
-                When I&apos;m not analyzing data or building models, you can find
-                me exploring new frontend frameworks, reading up on the latest
-                papers in deep learning, or contributing to open-source projects.
-              </p>
             </div>
           </div>
         </GlassCard>

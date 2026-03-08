@@ -126,7 +126,7 @@ export default function Learning() {
             <div className="orbit-node orbit-2">Computer Vision</div>
             <div className="orbit-node orbit-3">Generative AI</div>
             <div className="orbit-node orbit-4">Advanced ML</div>
-            <div className="orbit-node orbit-5">Data Science</div>
+            <div className="orbit-node orbit-5">Development</div>
           </div>
         </div>
       </GlassCard>

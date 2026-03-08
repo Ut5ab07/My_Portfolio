@@ -19,12 +19,12 @@ export default function Hero() {
             </h1>
 
             <h2 className="mb-6 text-xl font-medium text-cyan-400 sm:text-2xl cursor-pointer hover:text-cyan-300 transition-colors duration-300">
-              AI Engineer &bull; Data Science Enthusiast
+              AI  &bull; Data Science Enthusiast &bull; Developer
             </h2>
 
             <p className="max-w-xl text-base leading-relaxed text-gray-300 sm:text-lg">
-              Building intelligent systems with data and algorithms. Specialized in
-              machine learning, backend systems, and crafting engaging user experiences.
+              Building intelligent systems with data and algorithms. Specializing in
+              machine learning, AI based systems and crafting engaging user experiences.
             </p>
 
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
