@@ -6,10 +6,9 @@ import { Sparkles } from "lucide-react";
 const TOPICS = [
   "Reinforcement Learning",
   "Computer Vision",
-  "System Design",
+  "Data Science",
   "Advanced ML",
-  "Generative Models",
-  "Rust Programming",
+  "Generative AI"
 ];
 
 export default function Learning() {

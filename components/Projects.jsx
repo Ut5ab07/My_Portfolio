@@ -7,93 +7,33 @@ import ProjectModal from "@/components/ProjectModal";
 const PROJECTS_DATA = [
   {
     id: 1,
-    title: "AI Demand Forecaster",
-    description: "Time-series forecasting model using deep learning to predict inventory demand.",
-    fullDescription: "A comprehensive deep learning pipeline that processes historical sales data, weather information, and marketing events to predict future product demand. Built specifically to mitigate stockouts while preventing over-ordering.",
+    title: "Semantic Movie Search Engine",
+    description: "A semantic search engine that enables natural language movie discovery using transformer-based embeddings and vector similarity retrieval.",
+    fullDescription: "A semantic search engine that allows users to discover movies using natural language queries instead of exact keywords. The system uses transformer-based sentence embeddings to capture the meaning of user queries and performs vector similarity search to retrieve the most relevant films. This enables intuitive discovery of movies based on themes, moods, or vague descriptions.",
     features: [
-      "LSTM and Transformer-based architecture comparison",
-      "Automated automated data ingestion pipelines",
-      "Interactive dashboard for business users",
-      "API endpoints for real-time inference"
+      "Natural language movie search using semantic embeddings",
+      "Vector similarity search for context-aware recommendations",
+      "Efficient movie retrieval using FAISS vector indexing",
+      "Interactive user interface for exploring results",
+      "Supports vague queries like “movies about friendship in space”"
     ],
-    tech: ["PyTorch", "FastAPI", "Next.js", "Docker", "PostgreSQL"],
-    githubLink: "#",
-    demoLink: "#",
+    tech: ["Python", "SentenceTransformers", "FAISS", "Pandas"],
+    githubLink: "https://github.com/Ut5ab07/semantic-movie-search-engine"
   },
   {
     id: 2,
-    title: "Graph Neural Net Classifier",
-    description: "Node classification system using GNNs to detect fraudulent transactions.",
-    fullDescription: "Utilizes advanced Graph Convolutional Networks (GCN) to traverse complex transaction networks. Identifies anomalous patterns indicating potential fraud rings that traditional tabular models miss.",
+    title: "Graph-Based Movie Recommendation System",
+    description: "Movie recommendation system that models users and movies as a graph to discover similar users and suggest films based on shared viewing preferences",
+    fullDescription: "A movie recommendation system that models relationships between users and movies using graph theory. Users and movies are represented as nodes in a bipartite graph, where edges indicate positively rated movies. By analyzing graph connectivity and shared preferences between users, the system identifies similar users and recommends movies that like-minded viewers have enjoyed. This approach enables discovery of new genres and personalized recommendations through network-based analysis.",
     features: [
-      "Graph creation from tabular transaction logs",
-      "Custom GNN implementation via PyTorch Geometric",
-      "High accuracy on highly imbalanced datasets",
-      "Explainability module outlining risk sub-graphs"
+      "Bipartite graph representation of users and movies",
+      "Edge creation based on positively rated movies",
+      "Graph traversal to identify similar users",
+      "Recommendation generation through shared movie connections",
+      "Exploration of hidden relationships between user preferences"
     ],
-    tech: ["Python", "PyTorch Geometric", "NetworkX", "Scikit-Learn"],
-    githubLink: "#",
-    demoLink: "#",
-  },
-  {
-    id: 3,
-    title: "Knowledge Base Agent",
-    description: "RAG-powered conversational agent for internal documentation.",
-    fullDescription: "An end-to-end Retrieval-Augmented Generation system. Answers complex domain-specific questions securely by grounding LLM responses purely on proprietary enterprise data.",
-    features: [
-      "Vector embeddings with multi-modal support",
-      "Hybrid search (semantic + keyword)",
-      "Strict citation and hallucination checks",
-      "Conversation memory management"
-    ],
-    tech: ["LangChain", "Qdrant", "OpenAI API", "React", "Tailwind CSS"],
-    githubLink: "#",
-    demoLink: "#",
-  },
-  {
-    id: 4,
-    title: "Autonomous Drone Navigation",
-    description: "Reinforcement learning agent for obstacle avoidance in drone flights.",
-    fullDescription: "Developed a deep Q-learning system in simulated environments to train drones for navigating through complex urban obstacles autonomously using depth-camera inputs. Deployed on edge devices using TensorRT.",
-    features: [
-      "Custom 3D simulation environment in Unity",
-      "PPO and SAC algorithm implementations",
-      "Hardware-in-the-loop (HIL) testing",
-      "Edge-optimized inference"
-    ],
-    tech: ["Python", "PyTorch", "ROS2", "TensorRT", "C++"],
-    githubLink: "#",
-    demoLink: "#",
-  },
-  {
-    id: 5,
-    title: "Healthcare Document Parser",
-    description: "NLP pipeline to extract key medical entities from clinical notes.",
-    fullDescription: "A specialized NLP model fine-tuned on medical corpora to extract diagnoses, medications, and procedures from unstructured clinical text. Employs a custom Named Entity Recognition (NER) architecture.",
-    features: [
-      "Clinical BERT fine-tuning",
-      "De-identification of patient records (HIPAA compliant)",
-      "Confidence scoring for human-in-the-loop review",
-      "High-throughput batch processing"
-    ],
-    tech: ["Python", "Transformers", "spaCy", "FastAPI"],
-    githubLink: "#",
-    demoLink: "#",
-  },
-  {
-    id: 6,
-    title: "Real-time Anomaly Detection",
-    description: "Streaming analytics platform for detecting server infrastructure anomalies.",
-    fullDescription: "A high-performance pipeline ingesting system logs and metrics in real-time. Uses isolation forests and autoencoders to flag unusual CPU, memory, or network patterns before system outages occur.",
-    features: [
-      "Kafka streaming integration",
-      "Unsupervised anomaly detection ensemble",
-      "Low-latency alerting mechanism",
-      "Time-series visualizations"
-    ],
-    tech: ["Kafka", "PySpark", "Scikit-Learn", "Grafana", "Prometheus"],
-    githubLink: "#",
-    demoLink: "#",
+    tech: ["Python", "NetworkX", "Pandas", "Flask", "HTML", "CSS", "JavaScript"],
+    githubLink: "https://github.com/Ut5ab07/Movie_recommendation"
   }
 ];
 
@@ -150,6 +90,7 @@ export default function Projects() {
                   <Github className="h-4 w-4" />
                   Code
                 </button>
+                {/* 
                 <button 
                   className="flex items-center gap-2 text-sm font-medium text-cyan-500 transition-colors hover:text-cyan-400"
                   onClick={(e) => e.stopPropagation()}
@@ -157,6 +98,7 @@ export default function Projects() {
                   <ExternalLink className="h-4 w-4" />
                   Demo
                 </button>
+                */}
               </div>
             </div>
           ))}
@@ -164,7 +106,7 @@ export default function Projects() {
 
         <div className="mt-16 flex justify-center w-full">
           <a
-            href="https://github.com/Utsab" 
+            href="https://github.com/Ut5ab07" 
             target="_blank"
             rel="noopener noreferrer"
             className="group flex items-center gap-2 text-gray-300 hover:text-cyan-400 transition-colors font-medium text-lg bg-white/5 border border-white/10 px-6 py-3 rounded-full hover:bg-white/10 hover:border-cyan-500/30 backdrop-blur-sm"

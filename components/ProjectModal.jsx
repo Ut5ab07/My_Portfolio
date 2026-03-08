@@ -103,6 +103,7 @@ export default function ProjectModal({ isOpen, onClose, project }) {
                   <Github className="h-4 w-4" />
                   Source Code
                 </a>
+                {/*
                 <a
                   href={project.demoLink}
                   target="_blank"
@@ -112,6 +113,7 @@ export default function ProjectModal({ isOpen, onClose, project }) {
                   <ExternalLink className="h-4 w-4" />
                   Live Demo
                 </a>
+                */}
               </div>
             </GlassCard>
           </motion.div>
