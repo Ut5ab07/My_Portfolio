@@ -10,16 +10,16 @@ export default function About() {
           <div className="flex flex-col gap-12 md:flex-row md:items-center">
             {/* Left Side: Photo Placeholder */}
             <div className="w-full md:w-1/3 flex justify-center">
-              <div className="relative h-64 w-64 md:h-80 md:w-80 overflow-hidden rounded-2xl border border-white/10 shadow-[0_0_40px_rgba(91,192,190,0.15)] bg-slate-800/50">
+              <div className="relative group cursor-pointer h-64 w-64 md:h-80 md:w-80 overflow-hidden rounded-2xl border border-white/20 shadow-[0_0_30px_rgba(91,192,190,0.1)] hover:shadow-[0_0_50px_rgba(91,192,190,0.5)] hover:border-cyan-400/60 transition-all duration-500 ease-in-out bg-slate-800/50">
                 {/* Fallback pattern since profile.jpg might not exist initially */}
                 <div className="absolute inset-0 flex items-center justify-center text-slate-500 text-sm italic">
                   Image Placeholder
                 </div>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img 
-                  src="/profile.jpg" 
-                  alt="Utsab" 
-                  className="absolute inset-0 h-full w-full object-cover z-10 opacity-0 transition-opacity duration-300"
+                <img
+                  src="/profile.jpg"
+                  alt="Utsab"
+                  className="absolute inset-0 h-full w-full object-cover z-10 opacity-0 filter grayscale hover:grayscale-0 transform transition-all duration-500 ease-in-out group-hover:scale-110"
                   onLoad={(e) => e.currentTarget.classList.remove("opacity-0")}
                 />
               </div>
@@ -38,14 +38,14 @@ export default function About() {
               <p>
                 Hello! I&apos;m Utsab, a passionate AI and Data
                 Science enthusiast with a deep curiosity for understanding complex
-                systems. I&apos;m particularly interested in machine learning, semantic search, and recommendation systems, and I enjoy exploring 
+                systems. I&apos;m particularly interested in machine learning, semantic search, and recommendation systems, and I enjoy exploring
                 how algorithms and data can be used to solve real-world problems.
               </p>
 
               <p>
-              I also enjoy creating clean, intuitive applications that make complex technologies easier to use.
-              When I&apos;m not working on projects, I&apos;m usually experimenting with new AI ideas,
-              learning about emerging technologies in machine learning or watching movies and sports.
+                I also enjoy creating clean, intuitive applications that make complex technologies easier to use.
+                When I&apos;m not working on projects, I&apos;m usually experimenting with new AI ideas,
+                learning about emerging technologies in machine learning or watching movies and sports.
               </p>
 
             </div>
