@@ -1,6 +1,8 @@
 "use client";
 import SectionWrapper from "./ui/SectionWrapper";
 import GlassCard from "./ui/GlassCard";
+import Image from "next/image";
+import profilePic from "../public/profile.jpg";
 
 export default function About() {
   return (
@@ -15,12 +17,12 @@ export default function About() {
                 <div className="absolute inset-0 flex items-center justify-center text-slate-500 text-sm italic">
                   Image Placeholder
                 </div>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/profile.jpg"
+                <Image
+                  src={profilePic}
                   alt="Utsab"
-                  className="absolute inset-0 h-full w-full object-cover z-10 opacity-0 filter grayscale hover:grayscale-0 transform transition-all duration-500 ease-in-out group-hover:scale-110"
-                  onLoad={(e) => e.currentTarget.classList.remove("opacity-0")}
+                  fill
+                  className="object-cover z-10 opacity-0 filter grayscale hover:grayscale-0 transform transition-all duration-500 ease-in-out group-hover:scale-110"
+                  onLoadingComplete={(img) => img.classList.remove("opacity-0")}
                 />
               </div>
             </div>
@@ -36,16 +38,24 @@ export default function About() {
               </div>
 
               <p>
-                Hello! I&apos;m Utsab, a passionate AI and Data
-                Science enthusiast with a deep curiosity for understanding complex
-                systems. I&apos;m particularly interested in machine learning, semantic search, and recommendation systems, and I enjoy exploring
-                how algorithms and data can be used to solve real-world problems.
+                Hello! I&apos;m Utsab, an aspiring AI and Data Science enthusiast with
+                a strong curiosity for understanding complex systems and uncovering patterns within data. I&apos;m particularly interested in machine learning, semantic search, and recommendation systems,
+                and I enjoy exploring how intelligent algorithms can be applied to solve real-world problems.
               </p>
 
               <p>
-                I also enjoy creating clean, intuitive applications that make complex technologies easier to use.
-                When I&apos;m not working on projects, I&apos;m usually experimenting with new AI ideas,
-                learning about emerging technologies in machine learning or watching movies and sports.
+                I like working on projects that combine analytical thinking with practical
+                implementation, allowing me to experiment with models, data, and different
+                technologies. Along with the technical side of AI, I also enjoy building
+                clean and intuitive applications
+                that make complex technologies more accessible and user-friendly.
+              </p>
+
+              <p>
+                Beyond my projects, I&apos;m always interested in learning about new developments in
+                artificial intelligence and emerging technologies. In my free time,
+                I enjoy watching movies and following sports,
+                which helps me relax and stay inspired.
               </p>
 
             </div>
