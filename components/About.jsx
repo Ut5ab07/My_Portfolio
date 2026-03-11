@@ -6,9 +6,9 @@ import profilePic from "../public/profile.jpg";
 
 export default function About() {
   return (
-    <section id="about" className="relative z-10 w-full max-w-7xl px-6 py-24">
+    <section id="about" className="relative z-10 w-full max-w-7xl px-4 sm:px-6 py-16 sm:py-24">
       <SectionWrapper>
-        <GlassCard className="p-8 md:p-12">
+        <GlassCard className="p-6 sm:p-8 md:p-12">
           <div className="flex flex-col gap-12 md:flex-row md:items-center">
             {/* Left Side: Photo Placeholder */}
             <div className="w-full md:w-1/3 flex justify-center">
@@ -31,7 +31,7 @@ export default function About() {
             <div className="w-full md:w-2/3 space-y-6 text-gray-300 leading-relaxed text-lg">
               <div className="flex items-center w-full mb-6 cursor-pointer">
                 <div className="flex-grow h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
-                <h2 className="text-3xl font-bold text-white tracking-tight sm:text-4xl px-6 whitespace-nowrap">
+                <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight md:text-4xl px-4 sm:px-6 whitespace-normal sm:whitespace-nowrap text-center">
                   About Me<span className="text-cyan-400">.</span>
                 </h2>
                 <div className="flex-grow h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>

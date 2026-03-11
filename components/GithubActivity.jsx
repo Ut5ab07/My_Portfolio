@@ -56,7 +56,7 @@ export default function GithubActivity() {
 
   return (
     <SectionWrapper>
-      <GlassCard className="h-full p-8 relative overflow-hidden border-white/10 transition-colors duration-500">
+      <GlassCard className="h-full p-6 sm:p-8 relative overflow-hidden border-white/10 transition-colors duration-500">
         
         <div className="relative z-10">
           <div className="flex items-center w-full mb-8 cursor-pointer">
@@ -64,13 +64,13 @@ export default function GithubActivity() {
             <div className="flex items-center gap-3 px-6 text-white">
               <a href="https://github.com/Ut5ab07" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3">
                 <GithubIcon />
-                <h3 className="text-2xl font-bold tracking-tight whitespace-nowrap">GitHub Activity</h3>
+                <h3 className="text-xl sm:text-2xl font-bold tracking-tight whitespace-normal sm:whitespace-nowrap text-center">GitHub Activity</h3>
               </a>
             </div>
             <div className="flex-grow h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <StatBox icon={<BookOpen className="text-[#66E0FF]" />} label="Repositories" value={stats.repos} />
             <StatBox icon={<Users className="text-purple-400" />} label="Followers" value={stats.followers} />
             <StatBox icon={<Star className="text-emerald-400" />} label="Contributions" value={stats.contributions} />

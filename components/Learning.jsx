@@ -14,7 +14,7 @@ const TOPICS = [
 export default function Learning() {
   return (
     <SectionWrapper delay={0.2}>
-      <GlassCard className="h-full p-8 border-white/10 hover:border-purple-500/30 transition-colors duration-500 relative overflow-hidden group min-h-[450px]">
+      <GlassCard className="h-full p-6 sm:p-8 border-white/10 hover:border-purple-500/30 transition-colors duration-500 relative overflow-hidden group min-h-[450px]">
         <style dangerouslySetInnerHTML={{__html: `
           .learning-orbit {
             position: relative;
@@ -100,6 +100,27 @@ export default function Learning() {
           .orbit-4 { top: 80%; left: 32%; animation: float-2 7.5s ease-in-out infinite 1.5s; } 
           .orbit-5 { top: 80%; left: 68%; animation: float-2 6s ease-in-out infinite 2s; }
 
+          @media (max-width: 640px) {
+            .learning-orbit {
+              height: 380px;
+              transform: none;
+            }
+            .center-node {
+              width: 100px;
+              height: 100px;
+              font-size: 0.85rem;
+            }
+            .orbit-node {
+              font-size: 0.75rem;
+              padding: 6px 14px;
+            }
+            .orbit-1 { top: 8%; left: 50%; } 
+            .orbit-2 { top: 25%; left: 24%; } 
+            .orbit-3 { top: 25%; left: 76%; } 
+            .orbit-4 { top: 75%; left: 24%; } 
+            .orbit-5 { top: 75%; left: 76%; }
+          }
+
         `}} />
         <div className="absolute bottom-0 left-0 p-32 bg-purple-500/5 rounded-full blur-3xl -ml-16 -mb-16 group-hover:bg-purple-500/10 transition-colors duration-500" />
 
@@ -108,7 +129,7 @@ export default function Learning() {
             <div className="flex-grow h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
             <div className="flex items-center gap-3 px-6 text-white">
               <Sparkles className="h-8 w-8 text-purple-400" />
-              <h3 className="text-2xl font-bold tracking-tight whitespace-nowrap">Currently Learning</h3>
+              <h3 className="text-xl sm:text-2xl font-bold tracking-tight whitespace-normal sm:whitespace-nowrap text-center">Currently Learning</h3>
             </div>
             <div className="flex-grow h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
           </div>

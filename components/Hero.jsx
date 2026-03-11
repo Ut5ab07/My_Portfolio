@@ -13,12 +13,12 @@ export default function Hero() {
           animate={{ y: [0, -10, 0] }}
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
         >
-          <GlassCard className="flex flex-col items-center p-10 text-center md:p-16">
-            <h1 className="mb-4 bg-gradient-to-r from-white via-cyan-100 to-purple-200 bg-clip-text text-5xl font-extrabold tracking-tight text-transparent sm:text-7xl cursor-pointer hover:scale-105 transition-transform duration-300">
+          <GlassCard className="flex flex-col items-center p-6 sm:p-10 text-center md:p-16">
+            <h1 className="mb-4 bg-gradient-to-r from-white via-cyan-100 to-purple-200 bg-clip-text text-4xl font-extrabold tracking-tight text-transparent sm:text-5xl md:text-7xl cursor-pointer hover:scale-105 transition-transform duration-300">
               Utsab Raj Acharya
             </h1>
 
-            <h2 className="mb-6 text-xl font-medium text-cyan-400 sm:text-2xl cursor-pointer hover:text-cyan-300 transition-colors duration-300">
+            <h2 className="mb-6 text-lg font-medium text-cyan-400 sm:text-xl md:text-2xl cursor-pointer hover:text-cyan-300 transition-colors duration-300">
               AI  &bull; Data Science Enthusiast &bull; Developer
             </h2>
 

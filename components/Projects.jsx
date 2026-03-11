@@ -41,11 +41,11 @@ export default function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
 
   return (
-    <section id="projects" className="relative z-10 w-full max-w-7xl px-6 py-24">
+    <section id="projects" className="relative z-10 w-full max-w-7xl px-4 sm:px-6 py-16 sm:py-24">
       <SectionWrapper>
         <div className="mb-14 flex items-center w-full cursor-pointer">
           <div className="flex-grow h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-white px-6 whitespace-nowrap">
+          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight md:text-4xl text-white px-4 sm:px-6 whitespace-normal sm:whitespace-nowrap text-center">
             Featured Projects<span className="text-cyan-400">.</span>
           </h2>
           <div className="flex-grow h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>

@@ -10,12 +10,12 @@ export default function Contact() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <section id="contact" className="relative z-10 w-full max-w-4xl px-6 py-24 mx-auto">
+    <section id="contact" className="relative z-10 w-full max-w-4xl px-4 sm:px-6 py-16 sm:py-24 mx-auto">
       <SectionWrapper>
-        <GlassCard className="p-10 text-center md:p-16 border-white/10">
+        <GlassCard className="p-6 sm:p-10 text-center md:p-16 border-white/10">
           <div className="flex items-center w-full mb-6 cursor-pointer">
             <div className="flex-grow h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-white px-6 whitespace-nowrap">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-white px-4 sm:px-6 whitespace-normal sm:whitespace-nowrap">
               Let&apos;s Build Something<span className="text-cyan-400">.</span>
             </h2>
             <div className="flex-grow h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
@@ -35,7 +35,7 @@ export default function Contact() {
             </MagneticButton>
           </div>
 
-          <div className="flex items-center justify-center gap-8 border-t border-white/10 pt-8 mt-4">
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 border-t border-white/10 pt-8 mt-4">
             <div className="relative inline-flex items-center justify-center group">
               <a href="mailto:acharyautsab68@gmail.com" className="text-[#A8B2D1] hover:text-white transition-all duration-200 p-2 rounded-full hover:bg-white/5 hover:scale-[1.08]">
                 <Mail className="w-6 h-6" />
