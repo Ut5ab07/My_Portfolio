@@ -1,5 +1,6 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { X, Send, CheckCircle, Loader2 } from "lucide-react";
@@ -10,6 +11,11 @@ export default function ContactModal({ isOpen, onClose }) {
   const [status, setStatus] = useState("idle"); // idle, loading, success, error
   const [errorMsg, setErrorMsg] = useState("");
   const [startTime, setStartTime] = useState(0);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // Focus trap and esc key listener
   useEffect(() => {
@@ -74,9 +80,9 @@ export default function ContactModal({ isOpen, onClose }) {
       setErrorMsg("Please wait before sending another message.");
       setStatus("error");
       return;
-}
+    }
 
-localStorage.setItem("lastEmailTime", Date.now());
+    localStorage.setItem("lastEmailTime", Date.now());
 
     setStatus("loading");
     setErrorMsg("");
@@ -86,12 +92,6 @@ localStorage.setItem("lastEmailTime", Date.now());
       const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
       const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
-      console.log("EmailJS Config:", {
-        serviceId,
-        templateId,
-        publicKey
-      });
-
       if (!serviceId || !templateId || !publicKey) {
         console.error("EmailJS configuration missing.");
         setErrorMsg("Email service configuration error.");
@@ -99,14 +99,12 @@ localStorage.setItem("lastEmailTime", Date.now());
         return;
       }
 
-      const result = await emailjs.sendForm(
+      await emailjs.sendForm(
         serviceId,
         templateId,
         form,
         publicKey
       );
-
-      console.log("SUCCESS:", result.text);
 
       form.reset();
       setStatus("success");
@@ -124,19 +122,21 @@ localStorage.setItem("lastEmailTime", Date.now());
     }
   };
 
-  return (
+  if (!mounted) return null;
+
+  return createPortal(
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 sm:p-6 pointer-events-none">
 
           {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
             onClick={onClose}
-            className="absolute inset-0 bg-slate-950/70 backdrop-blur-sm"
+            className="absolute inset-0 bg-black/60 backdrop-blur-3xl pointer-events-auto"
           />
 
           {/* Modal Content */}
@@ -145,7 +145,7 @@ localStorage.setItem("lastEmailTime", Date.now());
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ type: "spring", duration: 0.5, bounce: 0.3 }}
-            className="relative w-full max-w-lg bg-slate-900/90 border border-white/10 rounded-2xl shadow-2xl overflow-hidden backdrop-blur-xl"
+            className="relative z-10 w-full max-w-lg bg-slate-900/90 border border-white/10 rounded-2xl shadow-2xl overflow-hidden backdrop-blur-xl pointer-events-auto"
             onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside modal
           >
             {/* Header */}
@@ -244,6 +244,7 @@ localStorage.setItem("lastEmailTime", Date.now());
           </motion.div>
         </div>
       )}
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body
   );
 }
