@@ -20,8 +20,22 @@ const PROJECTS_DATA = [
     tech: ["Python", "SentenceTransformers", "FAISS", "Pandas"],
     githubLink: "https://github.com/Ut5ab07/semantic-movie-search-engine"
   },
-  {
+    {
     id: 2,
+    title: "FIFA World Cup 2022 Best XI – Statistical Player Analysis",
+    description: "A data-driven football analytics project that selects the best XI players from the FIFA World Cup 2022 using statistical modeling.",
+    fullDescription: "A data-driven football analytics project that selects the best XI players from the FIFA World Cup 2022 using statistical modeling. The system evaluates players with position-specific metrics such as xG, xA, and per-90 stats, combined with normalization and weighted scoring. It enables objective comparison across roles and identifies top performers based on data rather than subjective opinions. The project also includes analytical visualizations and a tactical Best XI formation on a football pitch.",
+    features: [
+      "Exploratory data analysis on FIFA player datasets to evaluate performance metrics and player efficiency.",
+      "Statistical modeling and normalization to compare players across different positions",
+      "Visualized players  to compare performance metrics",
+      "Identified top performers based on data rather than subjective opinions"
+    ],
+    tech: ["Python", "Matplotlib", "Seaborn", "Pandas"],
+    githubLink: "https://github.com/Ut5ab07/FIFA-WC-DataAnalysis"
+  },
+  {
+    id: 3,
     title: "Graph-Based Movie Recommendation System",
     description: "Movie recommendation system that models users and movies as a graph to discover similar users and suggest films based on shared viewing preferences",
     fullDescription: "A movie recommendation system that models relationships between users and movies using graph theory. Users and movies are represented as nodes in a bipartite graph, where edges indicate positively rated movies. By analyzing graph connectivity and shared preferences between users, the system identifies similar users and recommends movies that like-minded viewers have enjoyed. This approach enables discovery of new genres and personalized recommendations through network-based analysis.",
