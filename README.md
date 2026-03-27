@@ -2,5 +2,5 @@
 
 ---
 
-### Check it out on:
+### Check it out on :
 www.utsabrajacharya.com.np
